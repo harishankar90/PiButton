@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         vlayout = findViewById(R.id.layout);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference().child("switch/data/status");
+        DatabaseReference myRef = database.getReference().child("switch");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
