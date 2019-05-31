@@ -1,10 +1,12 @@
 package com.hvdcreations.pibutton;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.MediaController;
@@ -28,6 +30,9 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         try {
             planetgif = new GifDrawable( getResources(), R.drawable.pi);
+            MediaController mc = new MediaController(SplashscreenActivity.this);
+            mc.setMediaPlayer(planetgif);
+            mc.show();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,9 +46,6 @@ public class SplashscreenActivity extends AppCompatActivity {
         public void run(){
             try{
                 sleep(2000 * SLEEP_TIMER);
-                final MediaController mc = new MediaController(SplashscreenActivity.this);
-                mc.setMediaPlayer(planetgif);
-                mc.show();
             }catch(InterruptedException e){
                 e.printStackTrace();
             }

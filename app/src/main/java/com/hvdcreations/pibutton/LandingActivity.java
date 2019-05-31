@@ -41,6 +41,9 @@ public class LandingActivity extends AppCompatActivity {
 
         try {
             piconngif = new GifDrawable( getResources(), R.drawable.piconn);
+            final MediaController mc = new MediaController(LandingActivity.this);
+            mc.setMediaPlayer(piconngif);
+            mc.show();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,9 +68,7 @@ public class LandingActivity extends AppCompatActivity {
         public void run(){
             try{
                 sleep(1000 * SLEEP_TIMER);
-                final MediaController mc = new MediaController(LandingActivity.this);
-                mc.setMediaPlayer(piconngif);
-                mc.show();
+
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
